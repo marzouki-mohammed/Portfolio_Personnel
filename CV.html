@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <style>
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#pdf-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pdf-viewer {
+  width: 80%;
+  height: 80%;
+  border: none;
+}
+
+ </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site avec PDF</title>
+
+</head>
+<body>
+
+<div id="pdf-container">
+  <iframe id="pdf-viewer" src="cv.pdf"></iframe>
+</div>
+
+
+<button id="back-button">Retour</button>
+
+<script >
+   window.onload = function() {
+  var pdfViewer = document.getElementById('pdf-viewer');
+  pdfViewer.onload = function() {
+    // PDF chargé
+    console.log('Le PDF est chargé.');
+  };
+
+  var backButton = document.getElementById('back-button');
+  backButton.onclick = function() {
+    history.back(); // Retourne à la page précédente
+  };
+};
+
+
+</script>
+</body>
+</html>
